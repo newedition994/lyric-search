@@ -9,7 +9,9 @@ class Lyrics extends Component {
     };
 
     componentDidMount() {
-        axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${this.props.match.params.id}&apikey=${process.env.REACT_APP_MM_KEY}`)
+        axios.get(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${
+            this.props.match.params.id
+            }&apikey=${process.env.REACT_APP_MM_KEY}`)
             .then(res => {
                 console.log(res.data)
                 // this.setState({ track_list: res.data.message.body.track_list })
@@ -20,7 +22,7 @@ class Lyrics extends Component {
     render() {
         return (
             <div>
-                <h1>Some Words</h1>
+                <h2>Song Lyrics</h2>
             </div>
         );
     }
